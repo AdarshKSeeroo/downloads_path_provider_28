@@ -2,13 +2,16 @@ group 'it.nplace.downloadspathprovider'
 version '1.0-SNAPSHOT'
 
 buildscript {
+    ext {
+        agp_version = '8.0.0'
+    }
     repositories {
         google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
@@ -22,7 +25,8 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdk 34
+    namespace 'it.nplace.downloadspathprovider'
 
     defaultConfig {
         minSdkVersion 21

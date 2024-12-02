@@ -4,10 +4,9 @@
 // find child widgets in the widget tree, read text, and verify that the values of widget properties
 // are correct.
 
+import 'package:downloads_path_provider_28_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:downloads_path_provider_28_example/main.dart';
 
 void main() {
   testWidgets('Get downloads directory', (WidgetTester tester) async {
@@ -18,7 +17,8 @@ void main() {
     expect(
         find.byWidgetPredicate(
           (Widget widget) =>
-              widget is Text && widget.data.startsWith('Downloads directory:'),
+              widget is Text &&
+              widget.data?.startsWith('Downloads directory:') == true,
         ),
         findsOneWidget);
   });
